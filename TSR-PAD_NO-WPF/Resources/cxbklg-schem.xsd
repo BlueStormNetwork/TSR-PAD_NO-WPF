@@ -1,0 +1,87 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Tday">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="call" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="phone" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+              <xs:element name="name" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="account" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NS" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+                    <xs:element name="memo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent msdata:ColumnName="memo_Text" msdata:Ordinal="1">
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" type="xs:string" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Num" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="RequestType" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ext" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+                    <xs:element name="repNum" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element name="xferIssue" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="severity" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="upgrade" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CFPP" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="added" type="xs:string" />
+                              <xs:attribute name="value" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ebill" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="added" type="xs:string" />
+                              <xs:attribute name="value" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" type="xs:string" />
+                        <xs:attribute name="value" type="xs:string" />
+                        <xs:attribute name="offer" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="type" type="xs:string" />
+                  <xs:attribute name="wrongXfer" type="xs:string" />
+                  <xs:attribute name="upg" type="xs:string" />
+                  <xs:attribute name="sale" type="xs:string" />
+                  <xs:attribute name="booked" type="xs:string" />
+                  <xs:attribute name="installdate" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" />
+            <xs:attribute name="Owner" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="shiftStart" type="xs:string" />
+      <xs:attribute name="shiftEnd" type="xs:string" />
+      <xs:attribute name="OT" type="xs:string" />
+      <xs:attribute name="statDay" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Tday" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

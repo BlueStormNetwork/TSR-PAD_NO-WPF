@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Tday">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="customer">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="phone" />
+                <xs:element name="name" />
+                <xs:element name="account">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="NS" />
+                      <xs:element maxOccurs="unbounded" name="memo">
+                        <xs:complexType>
+                          <xs:attribute name="type" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="Num" type="xs:string" use="required" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="RequestType">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ext">
+                        <xs:complexType>
+                          <xs:attribute name="value" type="xs:unsignedInt" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="repNum">
+                        <xs:complexType>
+                          <xs:attribute name="value" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="xferIssue">
+                        <xs:complexType>
+                          <xs:attribute name="severity" type="xs:unsignedByte" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="upgrade">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="CFPP">
+                              <xs:complexType>
+                                <xs:attribute name="added" type="xs:boolean" use="required" />
+                                <xs:attribute name="type" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ebill">
+                              <xs:complexType>
+                                <xs:attribute name="added" type="xs:boolean" use="required" />
+                                <xs:attribute name="value" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                          <xs:attribute name="type" type="xs:string" use="required" />
+                          <xs:attribute name="value" type="xs:string" use="required" />
+                          <xs:attribute name="offer" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type" type="xs:string" use="required" />
+                    <xs:attribute name="wrongXfer" type="xs:boolean" use="required" />
+                    <xs:attribute name="upgrade" type="xs:boolean" use="required" />
+                    <xs:attribute name="sale" type="xs:boolean" use="required" />
+                    <xs:attribute name="requestdate" type="xs:date" use="required" />
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="type" type="xs:string" use="required" />
+              <xs:attribute name="Owner" type="xs:boolean" use="required" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="sale">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="phone" />
+                <xs:element name="name" />
+                <xs:element name="account">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="NS" />
+                      <xs:element maxOccurs="unbounded" name="memo">
+                        <xs:complexType>
+                          <xs:attribute name="type" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="Num" type="xs:string" use="required" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="RequestType">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ext">
+                        <xs:complexType>
+                          <xs:attribute name="value" type="xs:unsignedByte" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="repNum">
+                        <xs:complexType>
+                          <xs:attribute name="value" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="xferIssue">
+                        <xs:complexType>
+                          <xs:attribute name="severity" type="xs:unsignedByte" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="upgrade">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="CFPP">
+                              <xs:complexType>
+                                <xs:attribute name="added" type="xs:boolean" use="required" />
+                                <xs:attribute name="type" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ebill">
+                              <xs:complexType>
+                                <xs:attribute name="added" type="xs:boolean" use="required" />
+                                <xs:attribute name="value" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                          <xs:attribute name="type" type="xs:string" use="required" />
+                          <xs:attribute name="value" type="xs:string" use="required" />
+                          <xs:attribute name="offer" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type" type="xs:string" use="required" />
+                    <xs:attribute name="wrongXfer" type="xs:boolean" use="required" />
+                    <xs:attribute name="upgrade" type="xs:boolean" use="required" />
+                    <xs:attribute name="sale" type="xs:boolean" use="required" />
+                    <xs:attribute name="requestdate" type="xs:date" use="required" />
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="type" type="xs:string" use="required" />
+              <xs:attribute name="Owner" type="xs:boolean" use="required" />
+              <xs:attribute name="booked" type="xs:boolean" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="shiftStart" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="shiftEnd" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="OT" type="xs:boolean" use="required" />
+      <xs:attribute name="statDay" type="xs:boolean" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

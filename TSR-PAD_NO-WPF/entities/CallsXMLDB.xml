@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--done: customer entitee can have attrib type 2 values residential/commercial -->
+<!--add schema based on the this sample file for customers then use linq to xml  to use local xml file as database-->
+<!--use xml file to sync data with sharepoint List maintain local DB for agents: call log/scoring card-->
+<Tday date="2015-02-25" shiftStart="07:30:00" shiftEnd="15:30:00" OT="false" statDay="false">
+  <call id="1" type="residential">
+    <caller Owner="true" name="Jhon" phone="415-332-6700"/>
+    <account Num="200-2390-7649">
+      <NS></NS>
+      <memo type="Auth">auths wife on ACT as of today</memo>
+      <memo type="2NDHME">needs 2NDHME ACT</memo>
+    </account>
+    <RequestType type="OOF">      
+      <upgrade type="-" value="---" CFPP="false" ebill="false">
+        <sale offer="http://www.exemple.com/fgk.aspx?dt=3" booked="false">
+          <followup date="1999-02-26"/>          
+        </sale>
+      </upgrade>
+      <xferIssue wrongXfer="true" severity="5" repNum="S45D" ext="873089">
+        agent xfered for SC to TSR cx is OOF
+      </xferIssue>
+    </RequestType>
+  </call>
+  <call id="2" type="residential">
+    <caller Owner="false" name="ahmed" phone="819-332-6700"/>
+    <account Num="200-0060-1542">
+      <NS></NS>
+      <memo type="TSR">dsr600 acreset</memo>
+    </account>
+    <RequestType type="TSR">
+      <upgrade type="MOVIES" value="LS-ECR" CFPP="true" ebill="false">
+        <sale offer="http://www.exemple.com/fgk.aspx?dt=3" booked="false">
+          <followup date="2015-02-26"/>
+        </sale>
+      </upgrade>
+      <xferIssue wrongXfer="true" severity="3" repNum="0000" ext="873219">
+        agent xfered for SC to TSR cx is OOF
+      </xferIssue>
+    </RequestType>
+  </call>
+  <call id="3" type="residential">
+    <caller Owner="true" name="Carole" phone="702-334-8002"/>
+    <account Num="200-2345-7623">
+      <NS>ci to become new cx</NS>
+      <memo type="Auth">no one else</memo>
+      <memo type="pre">
+        FEB-2015/inbound new cx offer: SW Carole took SUBLIM 39.99$/first 6 months
+        then 57.99$ 2XDSR600 install fee 49.99$ apply 200$ credit, 2RNTL PPV
+        upon activation
+      </memo>
+      <memo type="bil">
+        made pmt of 199.98$ with visa CC**4577 as upfront pmt for 2xDSR600
+      </memo>
+    </account>
+    <RequestType type="CSR">
+      <upgrade type="SALES" value="new" CFPP="true" ebill="true">
+        <sale offer="http://www.exemple.com/fgk.aspx?dt=3" booked="true">
+          <followup date="1999-02-26"/>
+        </sale>
+      </upgrade>
+      <xferIssue wrongXfer="false" severity="0" repNum="0000" ext="-"></xferIssue>
+    </RequestType>
+  </call>
+  <call id="4" type="commercial">
+    <caller Owner="true" name="salim" phone="250-387-6502"/>
+    <account Num="200-2390-0049">
+      <NS>ci to change pkg xfer to CSS</NS>
+      <memo type="none"></memo>
+    </account>
+    <RequestType type="CSS">
+      <upgrade type="-" value="---" CFPP="true" ebill="false">
+        <sale offer="http://www.exemple.com/fgk.aspx?dt=3" booked="false">
+          <followup date="1999-02-26"/>
+        </sale>
+      </upgrade>
+      <xferIssue wrongXfer="true" severity="3" repNum="873089" ext="S487">
+        agent xfered for SC to TSR cx is OOF
+      </xferIssue>
+    </RequestType>
+  </call>
+  
+</Tday>

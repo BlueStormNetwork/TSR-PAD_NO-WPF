@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--done: customer entitee can have attrib type 2 values residential/commercial -->
+<!--add schema based on the this sample file for customers then use linq to xml  to use local xml file as database-->
+<!--use xml file to sync data with sharepoint List maintain local DB for agents: call log/scoring card-->
+<Tday shiftStart="07:30:00" shiftEnd="15:30:00" OT="false" statDay="false">
+  <call type="residential" Owner="true">
+    <phone>415-332-6700</phone>
+    <name></name>
+    <account Num="200-2390-7649">
+      <NS></NS>
+      <memo type="Auth">auths wife on ACT as of today</memo>
+      <memo type="2NDHME">needs 2NDHME ACT</memo>
+    </account>
+    <RequestType type="OOF" wrongXfer="true" upg="false" sale="false" booked="false" installdate="2013-01-01">
+      <ext>873089</ext>
+      <repNum>S45D</repNum>
+      <xferIssue severity="5"></xferIssue>
+      <upgrade type="-" value="---" offer="http://www.exemple.com/fgk.aspx?dt=3">
+       <CFPP added="false" value="-"/>
+      <ebill added="false" value="--"/>
+      </upgrade>
+    </RequestType>
+  </call>
+  <call type="residential" Owner="false">
+    <phone>819-332-6700</phone>
+    <name></name>
+    <account Num="200-0060-1542">
+      <NS></NS>
+      <memo type="TSR">dsr600 acreset</memo>
+    </account>
+    <RequestType type="TSR" wrongXfer="true" upg="true" sale="false" booked="false" installdate="2013-01-01">
+      <ext>873219</ext>
+      <repNum>0000</repNum>
+      <xferIssue severity="3"></xferIssue>
+      <upgrade type="MOVIES" value="LS-ECR" offer="http://www.exemple.com/fgk.aspx?dt=3">
+        <CFPP added="true" value="P"/>
+        <ebill added="false" value="--"/>
+      </upgrade>
+    </RequestType>
+  </call>
+  <call type="residential" Owner="true">
+    <phone>702-334-8002</phone>
+    <name></name>
+    <account Num="200-2345-7623">
+      <NS>ci to become new cx</NS>
+      <memo type="Auth"></memo>
+      <memo type="pre"></memo>
+      <memo type="bil"></memo>
+    </account>
+    <RequestType type="CSS" wrongXfer="false" upg="false" sale="true" booked="true" installdate="2014-11-14">
+      <ext>-</ext>
+      <repNum>0000</repNum>
+      <xferIssue severity="0"></xferIssue>
+      <upgrade type="SALES" value="new" offer="http://www.exemple.com/fgk.aspx?dt=3">
+        <CFPP added="true" value="C"/>
+        <ebill added="true" value="ml23@yahoo.fr"/>
+      </upgrade>
+    </RequestType>
+  </call>
+
+  <call type="commercial" Owner="true">
+    <phone>250-387-6502</phone>
+    <name></name>
+    <account Num="200-2390-0049">
+      <NS>ci to change pkg xfer to CSS</NS>
+    </account>
+    <RequestType type="CSS" wrongXfer="true" upg="false" sale="false" booked="false" installdate="2013-01-01">
+      <ext>873089</ext>
+      <repNum>S487</repNum>
+      <xferIssue severity="3"></xferIssue>
+      <upgrade type="-" value="---" offer="http://www.exemple.com/fgk.aspx?dt=3">
+        <CFPP added="true" value="P"/>
+        <ebill added="false" value="--"/>
+      </upgrade>
+    </RequestType>
+  </call>
+</Tday>

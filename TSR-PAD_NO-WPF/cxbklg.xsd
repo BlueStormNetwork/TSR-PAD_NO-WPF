@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Tday">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="call">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="phone">
+                <xs:simpleType >
+                  <xs:restriction base="xs:string">
+                    <xs:length value="12" fixed="true" />
+                    <xs:pattern value="\d{3}\-\d{3}\-\d{4}?" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" />
+              <xs:element name="account">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NS" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="memo">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Num" use="required">
+                    <xs:simpleType >
+                      <xs:restriction base="xs:string">
+                        <xs:length value="13" fixed="true" />
+                        <xs:pattern value="20{2}\-\d{4}\-\d{4}?" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="RequestType">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ext">
+                      <xs:simpleType >
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="6" fixed="true" />
+                          <xs:minLength value="1" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="repNum" default="0000">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:length value="4" fixed="true" />                        
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="xferIssue">
+                      <xs:complexType>
+                        <xs:attribute name="severity" use="optional" default="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:unsignedByte">
+                              <xs:enumeration value="0" />
+                              <xs:enumeration value="1" />
+                              <xs:enumeration value="2" />
+                              <xs:enumeration value="3" />
+                              <xs:enumeration value="4" />
+                              <xs:enumeration value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="upgrade">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CFPP">
+                            <xs:complexType>
+                              <xs:attribute name="added" type="xs:boolean" use="optional" default="false" />
+                              <xs:attribute name="value" use="optional" default="-">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:length value="1" fixed="1"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ebill">
+                            <xs:complexType>
+                              <xs:attribute name="added" type="xs:boolean" use="optional" default="false" />
+                              <xs:attribute name="value" type="xs:string" use="optional" default="-" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" use="optional" default="-">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="-" />
+                              <xs:enumeration value="BUNDLE" />
+                              <xs:enumeration value="HD-BUNDLE" />
+                              <xs:enumeration value="MOVIES" />
+                              <xs:enumeration value="PKG" />
+                              <xs:enumeration value="SALES" />
+                              <xs:enumeration value="TAKE2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="value" use="optional" default="---">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="3" />
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="offer" use="optional" default="http://oscar/">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:anyURI">
+                              <xs:annotation>
+                                <xs:documentation>
+                                  this is for ref only as URI RC for data consistancy
+                                </xs:documentation>
+                              </xs:annotation>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="type" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="TSR" />
+                        <xs:enumeration value="CSR" />
+                        <xs:enumeration value="CR" />
+                        <xs:enumeration value="OOF" />
+                        <xs:enumeration value="FieldS" />
+                        <xs:enumeration value="CSS" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="wrongXfer" type="xs:boolean" default="false" />
+                  <xs:attribute name="upgrade" type="xs:boolean" default="false" />
+                  <xs:attribute name="sale" type="xs:boolean" default="false" />
+                  <xs:attribute name="booked" type="xs:boolean" default="false" />
+                  <xs:attribute name="installdate" type="xs:date" default="2013-01-01" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="type" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="residential" />
+                  <xs:enumeration value="commercial" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Owner" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="shiftStart" type="xs:time" use="required" />
+      <xs:attribute name="shiftEnd" type="xs:time" use="required" />
+      <xs:attribute name="OT" type="xs:boolean" use="required" />
+      <xs:attribute name="statDay" type="xs:boolean" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
