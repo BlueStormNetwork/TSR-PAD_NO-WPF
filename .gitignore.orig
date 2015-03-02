@@ -181,8 +181,3 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
-
-#data proto
-Calls*.xml
-cxbklg.xml
-cxbklg.xsd
