@@ -3,7 +3,7 @@
 <!--add schema based on the this sample file for customers then use linq to xml  to use local xml file as database-->
 <!--use xml file to sync data with sharepoint List maintain local DB for agents: Call log/scoring card-->
 <Tday WorkDate="2015-02-25" ShiftStart="07:30:00" ShiftEnd="15:30:00" OT="false" StatDay="false">
-  <Call CallID="1" CallType="residential">
+  <Call CallID="1" CallType="Residential">
     <Caller Owner="true" Name="Jhon" Phone="415-332-6700"/>
     <ACT Num="200-2390-7649">
       <NS></NS>

@@ -59,8 +59,8 @@
             this.lunchTS_MnuItm = new System.Windows.Forms.ToolStripMenuItem();
             this.coffee2TS_MnuItm = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -334,6 +334,14 @@
             this.splitContainer1.SplitterDistance = 173;
             this.splitContainer1.TabIndex = 5;
             // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(173, 330);
+            this.treeView1.TabIndex = 0;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
@@ -345,14 +353,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(744, 330);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(173, 330);
-            this.treeView1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -366,6 +366,7 @@
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "TSR-pad";
+            this.Load += new System.EventHandler(this.Form1_load);
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
